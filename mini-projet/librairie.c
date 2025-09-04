@@ -8,10 +8,11 @@ int main(){
     float prix[100];
     int quantite[100];
     int nbr = 0;
+    int nbrsuprm = 0;
     int nbrLivre;
 
     do {
-        printf("Menu \n 1: Ajouter un livre au stock.\n 2: Afficher tous les livres disponibles. \n 3: Rechercher un livre par son titre.\n 4: Mettre à jour la quantité d'un livre.\n 5: Supprimer un livre du stock.\n 6: Afficher le nombre total de livres en stock \n 7: Quitter.\n");
+        printf("Menu \n 1: Ajouter un livre au stock.\n 2: Afficher tous les livres disponibles. \n 3: Rechercher un livre par son titre.\n 4: Mettre à jour la quantité d'un livre.\n 5: Supprimer un livre du stock.\n 6: Afficher le nombre total de livres en stock \n 7: Nombre total de livres est supprimer \n 8: Quitter.\n");
 
         printf("\n Entrez le nombre svp : ");
         scanf("%d",&choix);
@@ -99,6 +100,7 @@ int main(){
             case 5: { 
                 int num;
                 int  indice = 0;
+                
                 printf("\nEntrez le numero du livre a supprimer (1 - %d) : ", nbr);
                 scanf("%d", &num);
 
@@ -116,7 +118,9 @@ int main(){
 
                     nbr--; 
                     printf("Livre supprime avec succes.\n");
-                     indice = 1;
+                    indice = 1;
+                    nbrsuprm++;
+
                 }
 
                 if (!indice) {
@@ -129,6 +133,10 @@ int main(){
                 break;
             }
             case 7:{
+                printf("Nombre total de livres est supprimer est : %d \n",nbrsuprm);
+                break;
+            }
+            case 8:{
                 printf("au revoir ! \n");
                 break;
             }
@@ -139,7 +147,7 @@ int main(){
         
         }
     
-    }while (choix != 7);
+    }while (choix != 8);
 
 
 }
